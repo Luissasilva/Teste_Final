@@ -1,0 +1,22 @@
+CREATE TABLE curso(
+id INT AUTO_INCREMENT  PRIMARY KEY,
+nome VARCHAR(100));
+
+CREATE TABLE turma(
+id INT AUTO_INCREMENT PRIMARY KEY,
+descricao VARCHAR(100),
+id_curso INT,
+FOREIGN KEY(id_curso) REFERENCES curso(id));
+
+CREATE TABLE turma_aluno(
+id INT AUTO_INCREMENT PRIMARY KEY,
+id_aluno INT,
+FOREIGN KEY(id_aluno) REFERENCES aluno(id),
+id_turma INT,
+FOREIGN KEY(id_turma) REFERENCES turma(id));
+
+CREATE TABLE aluno(
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(100) NOT NULL,
+    data_nascimento DATE NOT NULL,
+    matricula VARCHAR(50) UNIQUE NOT NULL);
