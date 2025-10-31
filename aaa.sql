@@ -1,7 +1,0 @@
-CREATE TABLE alunos (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    nome VARCHAR(100) NOT NULL,
-    data_nascimento DATE NOT NULL,
-    email VARCHAR(150) UNIQUE NOT NULL,
-    matricula VARCHAR(20) UNIQUE NOT NULL);
-  

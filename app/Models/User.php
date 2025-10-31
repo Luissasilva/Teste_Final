@@ -1,6 +1,6 @@
 <?php
 
-  App\Models;
+namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -18,6 +18,7 @@ class User extends Authenticatable
      * @var list<string>
      */
     protected $fillable = [
+        'foto',
         'name',
         'email',
         'password',
@@ -44,5 +45,12 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function likes(){
+        return $this->hasMany(Like::class);
+    }
+    public function deslikes(){
+        return $this->hasMany(Deslike::class);
     }
 }
